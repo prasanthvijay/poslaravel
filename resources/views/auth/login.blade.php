@@ -74,12 +74,27 @@
       </div> -->
     </div>
     <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
-      <h4 class="fw-300 c-grey-900 mB-40">Login</h4>
-      <form>
-        <div class="form-group"><label class="text-normal text-dark">Username</label><input type="email" class="form-control"
-            placeholder="John Doe"></div>
-        <div class="form-group"><label class="text-normal text-dark">Password</label><input type="password" class="form-control"
-            placeholder="Password"></div>
+    <h4 class="fw-300 c-grey-900 mB-40">Login  / <a href="register"> Register </a></h4>
+      <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+        <div class="form-group"><label class="text-normal text-dark">Username</label>
+        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
+        </div>
+        <div class="form-group"><label class="text-normal text-dark">Password</label>
+        <input id="password" type="password" class="form-control" name="password" required>
+
+        @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
+        </div>
         <div class="form-group">
           <div class="peers ai-c jc-sb fxw-nw">
             <div class="peer">
@@ -87,7 +102,7 @@
                   name="inputCheckboxesCall" class="peer"><label for="inputCall1" class="peers peer-greed js-sb ai-c"><span
                     class="peer peer-greed">Remember Me</span></label></div>
             </div>
-            <div class="peer"><button class="btn btn-primary">Login</button></div>
+            <div class="peer"><button type="submit" class="btn btn-primary">Login</button></div>
           </div>
         </div>
       </form>
