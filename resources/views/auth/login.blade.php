@@ -75,6 +75,14 @@
     </div>
     <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
     <h4 class="fw-300 c-grey-900 mB-40">Login  / <a href="register"> Register </a></h4>
+
+                     @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+
+
       <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
         <div class="form-group"><label class="text-normal text-dark">Username</label>
