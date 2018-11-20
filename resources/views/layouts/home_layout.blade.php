@@ -2,6 +2,8 @@
 <html>
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <head>
     <title>Dashboard</title>
     <style>
@@ -76,7 +78,7 @@
                 <div class="sidebar-logo">
                     <div class="peers ai-c fxw-nw">
                         <div class="peer peer-greed">
-                            <a class="sidebar-link td-n" href="index-2.html" class="td-n">
+                            <a class="sidebar-link td-n" href="home" class="td-n">
                                 <div class="peers ai-c fxw-nw">
                                     <div class="peer">
                                         <div class="logo"><img src="assets/static/images/logo.png" alt=""></div>
@@ -93,7 +95,7 @@
                     </div>
                 </div>
                 <ul class="sidebar-menu scrollable pos-r">
-                    <li class="nav-item mT-30 active"><a class="sidebar-link" href="index-2.html" default><span class="icon-holder"><i
+                    <li class="nav-item mT-30 active"><a class="sidebar-link" href="home" default><span class="icon-holder"><i
                   class="c-blue-500 ti-home"></i> </span><span class="title">Dashboard</span></a></li>
                     <!-- <li class="nav-item"><a class="sidebar-link" href="email.html"><span class="icon-holder"><i class="c-brown-500 ti-email"></i>
               </span><span class="title">Email</span></a></li>
@@ -167,7 +169,7 @@
                         
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
-                                <div class="peer mR-10"><img class="w-2r bdrs-50p" src="../../../randomuser.me/api/portraits/men/10.jpg" alt=""></div>
+                                <div class="peer mR-10"><img class="w-2r bdrs-50p" src="assets/api/portraits/men/10.jpg" alt=""></div>
                                 <div class="peer"><span class="fsz-sm c-grey-900"> {{ Auth::user()->name }}</span></div>
                             </a>
                             <ul class="dropdown-menu fsz-sm">
@@ -196,25 +198,18 @@
 
             @yield('content')
 
-            <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600"><span>Copyright © 2017 Designed by <a href="https://colorlib.com/"
-            target="_blank" title="Colorlib">Colorlib</a>. All rights reserved.</span>
-                <!-- Global site tag (gtag.js) - Google Analytics -->
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-
-                    function gtag() {
-                        dataLayer.push(arguments);
-                    }
-                    gtag('js', new Date());
-
-                    gtag('config', 'UA-23581568-13');
-                </script>
+            <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600"><span>Copyright © 2017 Designed by <a href="#"
+            target="_blank" title="pos">pos</a>. All rights reserved.</span>
+        
             </footer>
         </div>
     </div>
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script>var APP_URL = {!! json_encode(url('/')) !!};</script>
     <script type="text/javascript" src="{{ asset('js/vendor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    
 </body>
 
 </html>

@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
-            <h4 class="fw-300 c-grey-900 mB-40"><a href="register">Register </a> / <a href="login">Login</a></h4>
+            <h4 class="fw-300 c-grey-900 mB-40">Register / <a href="login">Login</a></h4>
             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
                 <div class="form-group">
