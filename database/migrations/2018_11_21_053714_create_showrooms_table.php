@@ -19,9 +19,9 @@ class CreateShowroomsTable extends Migration
             $table->string('sh_name');
             $table->string('TIN_number')->nullable();
             $table->string('sh_address')->nullable();
-            $table->string('sh_phone')->nullable();
+            $table->integer('sh_phone')->nullable();
             $table->string('sh_city')->nullable();
-            $table->string('sh_pincode')->nullable();
+            $table->integer('sh_pincode')->nullable();
             $table->enum('status',[1,2])->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\showroom;
 
 class ShowroomController extends Controller
 {
@@ -35,7 +38,17 @@ class ShowroomController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($request->input());
+        $user = Auth::user(); 
+        $data = $request->input();   
+        showroom::create(['user_id' => $user->id,
+            'sh_name' => $request->sh_name,
+            'TIN_number' => $request->TIN_number,
+            'sh_address' => $request->sh_address,
+            'sh_phone' => $request->sh_phone,
+            'sh_city' => $request->sh_city,
+            'sh_pincode' => $request->sh_pincode,
+            'status' => '1' ]);
+
     }
 
     /**

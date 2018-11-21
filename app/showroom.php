@@ -15,6 +15,6 @@ class showroom extends Model
      * @var array
      */
     protected $fillable = [
-        'sh_name', 'TIN_number', 'sh_address','sh_phone','sh_pincode','sh_city','status'
+        'user_id','sh_name', 'TIN_number', 'sh_address','sh_phone','sh_pincode','sh_city','status'
     ];
 }
