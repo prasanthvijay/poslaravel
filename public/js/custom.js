@@ -7,16 +7,16 @@ $(document).ready(function(){
     });
 
 
-   $('.customer').click(function(){
+   $('.showroom').click(function(){
 
     var project_id = $(this).attr("id");
     $.ajax({
-        url:APP_URL+"/customerForm/add",
+        url:APP_URL+"/showroomForm/add",
         method:"POST",
         data:{'project_id' : project_id},
         success:function(data){
 
-          $('#customer_form').html(data);
+          $('#showroom_form').html(data);
             console.log(data);
         }
     });

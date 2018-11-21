@@ -11,4 +11,9 @@ class FormsController extends Controller
         print_r($request->input());
         die;
     }
+    public function showroomForm(Request $request,$fromType){
+
+      
+        return view('forms.showroomform');
+    }
 }

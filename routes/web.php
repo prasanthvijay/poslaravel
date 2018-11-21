@@ -24,3 +24,7 @@ Route::get('/customer', 'CustomerController@index')->name('customer');
 Route::post('/customerForm/{formtype}','FormsController@customerForm');
 
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
+
+Route::resource('showroom', 'Admin\ShowroomController');
+
+Route::post('/showroomForm/{formtype}','FormsController@showroomForm');

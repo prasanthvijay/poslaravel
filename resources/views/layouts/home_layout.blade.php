@@ -111,8 +111,8 @@
               </span><span class="title">Forms</span></a></li>
                     <li class="nav-item dropdown"><a class="sidebar-link" href="ui.html"><span class="icon-holder"><i class="c-pink-500 ti-palette"></i>
               </span><span class="title">UI Elements</span></a></li> -->
-                    <li class="nav-item"><a class="sidebar-link" href="customer"><span class="icon-holder"><i class="c-light-blue-500 ti-pencil"></i>
-                    </span><span class="title">Customer</span></a></li>
+                    <li class="nav-item"><a class="sidebar-link" href="showroom"><span class="icon-holder"><i class="c-light-blue-500 ti-pencil"></i>
+                    </span><span class="title">Showroom</span></a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder"><i
                   class="c-orange-500 ti-layout-list-thumb"></i> </span><span class="title">Customer</span> <span class="arrow"><i
                   class="ti-angle-right"></i></span></a>
