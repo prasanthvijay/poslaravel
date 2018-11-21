@@ -4,15 +4,41 @@
 
  <main class="main-content bgc-grey-100">
         <div id="mainContent">
-          <div class="row gap-20 masonry pos-r">
-            <h4 class="c-grey-900">UI Elements</h4>
-            <div class="masonry-sizer col-md-6"></div>
-        
-            <div class="masonry-item col-md-12">
-              <div class="bgc-white p-20 bd">
-                <h6 class="c-grey-900">Showroom</h6>
-                <div class="mT-30"><button type="button" class="btn btn-primary showroom" data-toggle="modal" data-target="#showroomModal">Add </button>
-                  <div class="modal fade" id="showroomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <div class="container-fluid">
+              <div class="col-md-12">
+                <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                  <h4 class="c-grey-900 mB-20">Showroom <button type="button" class="btn btn-primary showroom" data-toggle="modal" data-target="#showroomModal">Add </button> </h4>
+
+                  <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                      </tr>
+                    </thead>                    
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+                
+                
+                <div class="modal fade" id="showroomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -28,11 +54,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
+             
       </main>
 
 

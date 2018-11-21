@@ -35,7 +35,7 @@ class ShowroomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        print_r($request->input());
     }
 
     /**

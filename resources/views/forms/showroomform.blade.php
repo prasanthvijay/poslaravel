@@ -1,5 +1,4 @@
-{{ Form::open(array('url' => 'showroom/create','method' => 'GET')) }}
-
+{{ Form::open(array('url' => '','method' => 'post','id' => 'showroom_post_form')) }}
 <div class="form-row">
     <div class="form-group col-md-6">
         {!! Form::label('sh_name', 'Name') !!}
@@ -34,7 +33,7 @@
     
 </div>
 <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-5">
         {!! Form::label('sh_phone', 'Phone') !!}
             {!! Form::text('sh_phone', null, [
                 'class' => 'form-control',
@@ -54,8 +53,8 @@
                 ]) !!} 
       
     </div>
-    <div class="form-group col-md-2">
-        {!! Form::label('sh_pincode', 'City') !!}
+    <div class="form-group col-md-3">
+        {!! Form::label('sh_pincode', 'Zip code') !!}
                     {!! Form::text('sh_pincode',null, [
                         'class' => 'form-control',
                         'name' => 'sh_pincode',
@@ -66,8 +65,8 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-12" align="right">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        {!! Form::button('Close',array('class' => 'btn btn-secondary','data-dismiss' => 'modal')); !!}
+        {!! Form::button('Submit',array('class' => 'btn btn-primary showroom_form_submit')); !!}
     </div>
                
 </div>

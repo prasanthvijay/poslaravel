@@ -8,8 +8,7 @@ class FormsController extends Controller
 {
     public function customerForm(Request $request,$fromType){
 
-        print_r($request->input());
-        die;
+       
     }
     public function showroomForm(Request $request,$fromType){
 
