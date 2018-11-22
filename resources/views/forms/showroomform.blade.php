@@ -1,4 +1,8 @@
-{{ Form::open(array('url' => '','method' => 'post','id' => 'showroom_post_form')) }}
+@if(isset($showroom))
+    {{ Form::model($showroom, array('url' => '','method' => 'patch','id' => 'showroom_post_form_'.$sh_id )) }}
+@else
+    {{ Form::open(array('url' => '','method' => 'post','id' => 'showroom_post_form')) }}
+@endif
 <div class="form-row">
     <div class="form-group col-md-6">
         {!! Form::label('sh_name', 'Name') !!}
@@ -66,7 +70,8 @@
 <div class="form-row">
     <div class="form-group col-md-12" align="right">
         {!! Form::button('Close',array('class' => 'btn btn-secondary','data-dismiss' => 'modal')); !!}
-        {!! Form::button('Submit',array('class' => 'btn btn-primary showroom_form_submit')); !!}
+        {!! Form::button('Submit',array('class' => 'btn btn-primary showroom_form_submit', 
+            'data-sh_id' => $sh_id )); !!}
     </div>
                
 </div>

@@ -17,7 +17,10 @@ class ShowroomController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $showroom = showroom::where('status','=','1')
+                    ->get();
+
+        return view('admin.index',compact('showroom'));
     }
 
     /**
@@ -82,7 +85,17 @@ class ShowroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        showroom::where('id', $id)->update([
+            'sh_name' => $request->sh_name,
+            'TIN_number' => $request->TIN_number,
+            'sh_address' => $request->sh_address,
+            'sh_phone' => $request->sh_phone,
+            'sh_city' => $request->sh_city,
+            'sh_pincode' => $request->sh_pincode,
+            ]);
+
+        return response()->json(['message'=>'success']);
+
     }
 
     /**

@@ -8,28 +8,36 @@
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                   <h4 class="c-grey-900 mB-20">Showroom <button type="button" class="btn btn-primary showroom" data-toggle="modal" data-target="#showroomModal">Add </button> </h4>
-
+                  <!-- {{ dump($showroom)}} -->
                   <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                       <tr>
+                        <th>S.no</th>
                         <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>TIN number</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>City</th>
+                        <th>Pin number</th>
+                        <th>Action</th>
                       </tr>
                     </thead>                    
                     <tbody>
+                     @foreach($showroom as $key => $showrooms)
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{  ucfirst($showrooms->sh_name)  }}</td>
+                        <td>{{  $showrooms->TIN_number  }}</td>
+                        <td>{{  $showrooms->sh_address  }}</td>
+                        <td>{{  $showrooms->sh_phone  }}</td>
+                        <td>{{  ucfirst($showrooms->sh_city)  }}</td>
+                        <td>{{  $showrooms->sh_pincode  }}</td>
+                        <td>
+                        <a href="#" class="showroom" data-sh_id="{{ $showrooms->id }}" data-toggle="modal" data-target="#showroomModal" >Edit</a>
+                        / <a href="#" >Delete</a>
+                        </td>
                       </tr>
-                      
+                    @endforeach     
                     </tbody>
                   </table>
                 </div>
@@ -38,7 +46,7 @@
           </div>
                 
                 
-                <div class="modal fade" id="showroomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="showroomModal" tabindex="-1" role="dialog" 
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">

@@ -29,4 +29,6 @@ Route::get('showroom', 'Admin\ShowroomController@index');
 
 Route::post('showroom/store', 'Admin\ShowroomController@store');
 
+Route::patch('showroom/update/{id}', 'Admin\ShowroomController@update');
+
 Route::post('/showroomForm/{formtype}','FormsController@showroomForm');
